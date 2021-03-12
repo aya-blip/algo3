@@ -1,0 +1,32 @@
+
+PROCEDURE dot_product(VAR ps:INTEGER;v1,v2: ARRAY_OF INTEGER[2] )
+
+BEGIN
+ ps= v1[0]*v2[0]+v1[1]*v2[1]
+ 
+END
+ALGORITHM orth_vec
+VAR
+ ps:INTEGER;
+ v1,v2: ARRAY_OF INTEGER  [2];
+ N:INTEGER;
+ i,j:INTEGER;
+BEGIN
+ WRite(' give me N pairs')
+ Read (N)
+ IF (N%2=0) then
+ FOR i FROM 0 TO N-1 DO
+ FOR j FROM 0 TO 1  DO
+     Read(v1);
+     Read(v2);
+ END_FOR
+ dot_product(ps,v1,v2)
+ IF (ps=0) THEN
+     WRite('v1 and v2 are Orthogonal')
+     else 
+     WRite('v1 and v2 are not Orthogonal ')
+ END_IF
+     
+ END_FOR
+
+END
